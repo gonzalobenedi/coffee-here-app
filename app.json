@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "coffee-app",
-    "slug": "coffee-app",
+    "name": "coffee-here",
+    "slug": "coffee-here",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
