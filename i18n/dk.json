@@ -1,0 +1,23 @@
+{
+    "loginPage": {
+        "title": "Log ind",
+        "btnSimulateLogin": "Simuler login",
+        "btnSwitchToEnglish": "Skift til engelsk",
+        "btnSwitchToSpanish": "Skift til spansk",
+        "btnSwitchToDanish": "Skift til dansk"
+    },
+    "tabsLayout": {
+        "browse": "Gennemse",
+        "discover": "Opdag"
+    },
+    "browsePage": {
+        "title": "Gennemse side"
+    },
+    "discoverPage": {
+        "title": "Opdag side",
+        "lnkCoffeeStoreDetails": "Gå til kaffebutik {{coffeeStoreId}} detaljer"
+    },
+    "coffeeStorePage": {
+        "title": "Kaffebutik {{coffeeStoreId}} detaljeside"
+    }
+}

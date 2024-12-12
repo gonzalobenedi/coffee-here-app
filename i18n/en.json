@@ -1,0 +1,23 @@
+{
+    "loginPage": {
+        "title": "Login",
+        "btnSimulateLogin": "Simulate Login",
+        "btnSwitchToEnglish": "Switch to English",
+        "btnSwitchToSpanish": "Switch to Spanish",
+        "btnSwitchToDanish": "Switch to Danish"
+    },
+    "tabsLayout": {
+        "browse": "Browse",
+        "discover": "Discover"
+    },
+    "browsePage": {
+        "title": "Browse Page"
+    },
+    "discoverPage": {
+        "title": "Discover Page",
+        "lnkCoffeeStoreDetails": "Go to Coffee Store {{coffeeStoreId}} Details"
+    },
+    "coffeeStorePage": {
+        "title": "Coffee Store {{coffeeStoreId}} Details Page"
+    }
+}

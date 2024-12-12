@@ -1,0 +1,23 @@
+{
+    "loginPage": {
+        "title": "Iniciar sesión",
+        "btnSimulateLogin": "Simular inicio de sesión",
+        "btnSwitchToEnglish": "Cambiar a inglés",
+        "btnSwitchToSpanish": "Cambiar a español",
+        "btnSwitchToDanish": "Cambiar a danés"
+    },
+    "tabsLayout": {
+        "browse": "Explorar",
+        "discover": "Descubrir"
+    },
+    "browsePage": {
+        "title": "Página de exploración"
+    },
+    "discoverPage": {
+        "title": "Página de descubrimiento",
+        "lnkCoffeeStoreDetails": "Ir a los detalles de la tienda de café {{coffeeStoreId}}"
+    },
+    "coffeeStorePage": {
+        "title": "Página de detalles de la tienda de café {{coffeeStoreId}}"
+    }
+}
