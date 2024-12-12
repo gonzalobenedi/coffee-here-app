@@ -10,12 +10,15 @@
         "browse": "Explorar",
         "discover": "Descubrir"
     },
+    "discoverPage": {
+        "lblCurrentLocation": "Ubicación actual:",
+        "lblSectionNearYou": "Cerca de ti",
+        "lblSectionPopular": "Más popular",
+        "lblSectionRecommended": "Recomendado para ti",
+        "lblSectionFavourites": "Tus favoritos"
+    },
     "browsePage": {
         "title": "Página de exploración"
-    },
-    "discoverPage": {
-        "title": "Página de descubrimiento",
-        "lnkCoffeeStoreDetails": "Ir a los detalles de la tienda de café {{coffeeStoreId}}"
     },
     "coffeeStorePage": {
         "title": "Página de detalles de la tienda de café {{coffeeStoreId}}"
