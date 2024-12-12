@@ -10,14 +10,17 @@
         "browse": "Gennemse",
         "discover": "Opdag"
     },
+    "discoverPage": {
+        "lblCurrentLocation": "Nuværende placering:",
+        "lblSectionNearYou": "I nærheden af dig",
+        "lblSectionPopular": "Mest populære",
+        "lblSectionRecommended": "Anbefalet til dig",
+        "lblSectionFavourites": "Dine favoritter"
+    },
     "browsePage": {
         "title": "Gennemse side"
     },
-    "discoverPage": {
-        "title": "Opdag side",
-        "lnkCoffeeStoreDetails": "Gå til kaffebutik {{coffeeStoreId}} detaljer"
-    },
     "coffeeStorePage": {
-        "title": "Kaffebutik {{coffeeStoreId}} detaljeside"
+        "title": "Kaffebutik {{coffeeStoreId}} Detaljer side"
     }
 }
