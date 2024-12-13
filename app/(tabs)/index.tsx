@@ -1,15 +1,17 @@
 import CoffeeStoreCard from "@/components/Cards/CoffeeStore/CoffeStoreCard";
 import HorizontalScroll from "@/components/HorizontalScroll/HorizontalScroll";
 import { CoffeeStore } from "@/models/CoffeeStore";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Text, SafeAreaView, StyleSheet, ScrollView, View } from "react-native";
-
-const COFFEE_STORES_DUMMY_IDS = [1, 2];
+import * as Location from "expo-location";
 
 export default function DiscoverPage() {
   const { t } = useTranslation();
   const { push } = useRouter();
+  const [currentAddress, setCurrentAddress] = useState<string | null>(null);
+
   const coffeeStores: CoffeeStore[] = [
     {
       id: "1",
@@ -53,11 +55,27 @@ export default function DiscoverPage() {
     },
   ];
 
+  useEffect(() => {
+    async function getCurrentLocation() {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        return;
+      }
+
+      const location = await Location.getCurrentPositionAsync({});
+      const address = await Location.reverseGeocodeAsync(location.coords);
+      setCurrentAddress(`${address[0].name}, ${address[0].city}`);
+    }
+    getCurrentLocation();
+  }, []);
+
   return (
     <SafeAreaView>
       <View>
         <View style={styles.header}>
-          <Text>{t("discoverPage.lblCurrentLocation")} Bella Center</Text>
+          <Text>
+            {t("discoverPage.lblCurrentLocation")} {currentAddress}
+          </Text>
         </View>
         <ScrollView>
           <View style={styles.container}>
@@ -106,8 +124,6 @@ export default function DiscoverPage() {
 
 const styles = StyleSheet.create({
   header: {
-    fontSize: 20,
-    fontWeight: "bold",
     backgroundColor: "#fff",
     paddingHorizontal: 16,
     paddingVertical: 8,
