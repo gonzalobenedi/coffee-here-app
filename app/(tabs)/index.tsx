@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Text, SafeAreaView, StyleSheet, ScrollView, View } from "react-native";
 import * as Location from "expo-location";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { Colors } from "@/styles/tokens";
 
 export default function DiscoverPage() {
   const { t } = useTranslation();
@@ -61,7 +63,6 @@ export default function DiscoverPage() {
       if (status !== "granted") {
         return;
       }
-
       const location = await Location.getCurrentPositionAsync({});
       const address = await Location.reverseGeocodeAsync(location.coords);
       setCurrentAddress(`${address[0].name}, ${address[0].city}`);
@@ -73,6 +74,7 @@ export default function DiscoverPage() {
     <SafeAreaView>
       <View>
         <View style={styles.header}>
+          <Ionicons name="location" size={16} color={Colors.PRIMARY} />
           <Text>
             {t("discoverPage.lblCurrentLocation")} {currentAddress}
           </Text>
@@ -127,6 +129,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     paddingHorizontal: 16,
     paddingVertical: 8,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
   },
   container: {
     paddingVertical: 8,
