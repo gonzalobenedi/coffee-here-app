@@ -22,7 +22,7 @@ const CoffeeStoreCard: React.FC<CoffeeStoreCardProps> = ({
 
       <View style={styles.infoContainer}>
         <View style={styles.infoElement}>
-          <Ionicons name="star-outline" size={18} color={Colors.PRIMARY} />
+          <Ionicons name="star" size={18} color="#ecd500" />
           <Text style={styles.infoText}>{store.usersRating.toFixed(1)}</Text>
         </View>
         <View style={styles.infoElement}>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   infoText: {
     marginLeft: 2,
-    fontSize: 12,
+    fontSize: 14,
     color: "#555",
     fontWeight: "bold",
   },
