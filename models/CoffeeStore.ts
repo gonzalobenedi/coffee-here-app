@@ -1,3 +1,5 @@
+import { Coordinates } from "./Coordinates";
+
 export interface CoffeeStore {
   id: string;
   name: string;
@@ -6,5 +8,6 @@ export interface CoffeeStore {
   postalCode: string;
   city: string;
   country: string;
+  coordinates: Coordinates;
   usersRating: number;
 }

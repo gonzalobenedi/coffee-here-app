@@ -8,54 +8,16 @@ import { Text, SafeAreaView, StyleSheet, ScrollView, View } from "react-native";
 import * as Location from "expo-location";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "@/styles/tokens";
+import { COFFE_STORES } from "@/data/CoffeStores";
 
 export default function DiscoverPage() {
   const { t } = useTranslation();
   const { push } = useRouter();
   const [currentAddress, setCurrentAddress] = useState<string | null>(null);
-
-  const coffeeStores: CoffeeStore[] = [
-    {
-      id: "1",
-      name: "Justicia café y pasteles",
-      phone: "34922351867",
-      address: "Calle de la Manifestación, 11",
-      postalCode: "50003",
-      city: "Zaragoza",
-      country: "España",
-      usersRating: 4.5,
-    },
-    {
-      id: "2",
-      name: "Acho Coffee",
-      phone: "34922351867",
-      address: "Calle de la Manifestación, 11",
-      postalCode: "50003",
-      city: "Zaragoza",
-      country: "España",
-      usersRating: 4.5,
-    },
-    {
-      id: "3",
-      name: "MET Café",
-      phone: "34922351867",
-      address: "Calle de la Manifestación, 11",
-      postalCode: "50003",
-      city: "Zaragoza",
-      country: "España",
-      usersRating: 4.5,
-    },
-    {
-      id: "4",
-      name: "Veintiuno Coffee",
-      phone: "34922351867",
-      address: "Calle de la Manifestación, 11",
-      postalCode: "50003",
-      city: "Zaragoza",
-      country: "España",
-      usersRating: 4.5,
-    },
-  ];
+  const nearYouCoffeeStores: CoffeeStore[] = COFFE_STORES.slice(0, 5);
+  const popularCoffeeStores: CoffeeStore[] = COFFE_STORES.slice(5, 10);
+  const recommendedCoffeeStores: CoffeeStore[] = COFFE_STORES.slice(10, 15);
+  const favouritesCoffeeStores: CoffeeStore[] = COFFE_STORES.slice(15, 20);
 
   useEffect(() => {
     async function getCurrentLocation() {
@@ -82,7 +44,7 @@ export default function DiscoverPage() {
         <ScrollView>
           <View style={styles.container}>
             <HorizontalScroll title={t("discoverPage.lblSectionNearYou")}>
-              {coffeeStores.map((store) => (
+              {nearYouCoffeeStores.map((store) => (
                 <CoffeeStoreCard
                   key={store.id}
                   store={store}
@@ -91,7 +53,7 @@ export default function DiscoverPage() {
               ))}
             </HorizontalScroll>
             <HorizontalScroll title={t("discoverPage.lblSectionPopular")}>
-              {coffeeStores.map((store) => (
+              {popularCoffeeStores.map((store) => (
                 <CoffeeStoreCard
                   key={store.id}
                   store={store}
@@ -100,7 +62,7 @@ export default function DiscoverPage() {
               ))}
             </HorizontalScroll>
             <HorizontalScroll title={t("discoverPage.lblSectionRecommended")}>
-              {coffeeStores.map((store) => (
+              {recommendedCoffeeStores.map((store) => (
                 <CoffeeStoreCard
                   key={store.id}
                   store={store}
@@ -109,7 +71,7 @@ export default function DiscoverPage() {
               ))}
             </HorizontalScroll>
             <HorizontalScroll title={t("discoverPage.lblSectionFavourites")}>
-              {coffeeStores.map((store) => (
+              {favouritesCoffeeStores.map((store) => (
                 <CoffeeStoreCard
                   key={store.id}
                   store={store}
