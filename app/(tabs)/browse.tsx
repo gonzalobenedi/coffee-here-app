@@ -40,10 +40,8 @@ export default function BrowsePage() {
     // Implement search logic here
   };
 
-  const navigateToUserLocation = () => {
-    if (userRegion) {
-      mapRef.current?.animateToRegion(userRegion, 1000);
-    }
+  const navigateTo = (region: Region) => {
+    mapRef.current?.animateToRegion(region, 1000);
   };
 
   return (
@@ -72,6 +70,13 @@ export default function BrowsePage() {
                 coordinate={store.coordinates}
                 title={store.name}
                 description={store.address}
+                onSelect={() =>
+                  navigateTo({
+                    ...store.coordinates,
+                    latitudeDelta: 0.01,
+                    longitudeDelta: 0.01,
+                  })
+                }
               >
                 <Callout style={styles.callout}>
                   <View>
@@ -90,7 +95,7 @@ export default function BrowsePage() {
               backgroundColor: Colors.PRIMARY,
               borderRadius: 50,
             }}
-            onPress={() => navigateToUserLocation()}
+            onPress={() => navigateTo(userRegion || browseRegion)}
           >
             <Ionicons name={"location-outline"} color="white" size={32} />
           </Pressable>
