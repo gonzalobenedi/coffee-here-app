@@ -15,7 +15,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: t("tabsLayout.browse"),
+          title: t("tabsLayout.discover"),
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "compass" : "compass-outline"}
@@ -28,7 +28,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="browse"
         options={{
-          title: t("tabsLayout.discover"),
+          title: t("tabsLayout.browse"),
           tabBarIcon: ({ color }) => (
             <Ionicons name={"search"} color={color} size={24} />
           ),
