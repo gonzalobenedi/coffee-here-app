@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { View, StyleSheet, Pressable, Text } from "react-native";
-import MapView, { Region } from "react-native-maps";
+import MapView, { Callout, Marker, Region } from "react-native-maps";
 import * as Location from "expo-location";
 import { Colors } from "@/styles/tokens";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import React from "react";
+import { COFFE_STORES } from "@/data/CoffeStores";
 
 export default function BrowsePage() {
   const [browseRegion, setBrowseRegion] = useState<Region | null>(null);
@@ -37,7 +38,6 @@ export default function BrowsePage() {
   const triggerSearch = (region: Region) => {
     setBrowseRegion(region);
     // Implement search logic here
-    alert("Search triggered");
   };
 
   const navigateToUserLocation = () => {
@@ -55,7 +55,32 @@ export default function BrowsePage() {
             style={styles.map}
             region={browseRegion}
             onRegionChangeComplete={triggerSearch}
-          />
+          >
+            {userRegion && (
+              <Marker
+                coordinate={{
+                  latitude: userRegion.latitude,
+                  longitude: userRegion.longitude,
+                }}
+                title={"Current location"}
+                description={"You are here"}
+              />
+            )}
+            {COFFE_STORES.map((store) => (
+              <Marker
+                key={store.id}
+                coordinate={store.coordinates}
+                title={store.name}
+                description={store.address}
+              >
+                <Callout style={styles.callout}>
+                  <View>
+                    <Text style={styles.title}>{JSON.stringify(store)}</Text>
+                  </View>
+                </Callout>
+              </Marker>
+            ))}
+          </MapView>
           <Pressable
             style={{
               position: "absolute",
@@ -95,5 +120,19 @@ const styles = StyleSheet.create({
   map: {
     width: "100%",
     height: "100%",
+  },
+  callout: {
+    backgroundColor: "white",
+    borderRadius: 4,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 4,
+    width: 200,
+  },
+  title: {
+    color: "black",
+    fontSize: 14,
+    lineHeight: 18,
+    flex: 1,
   },
 });
