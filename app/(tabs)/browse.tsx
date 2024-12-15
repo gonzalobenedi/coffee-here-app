@@ -60,8 +60,8 @@ export default function BrowsePage() {
                   latitude: userRegion.latitude,
                   longitude: userRegion.longitude,
                 }}
-                title={"Current location"}
-                description={"You are here"}
+                title={"browsePage.lblCurrentLocationTitle"}
+                description={"browsePage.lblCurrentLocationDescription"}
               />
             )}
             {COFFE_STORES.map((store) => (
@@ -75,6 +75,13 @@ export default function BrowsePage() {
                     ...store.coordinates,
                     latitudeDelta: 0.01,
                     longitudeDelta: 0.01,
+                  })
+                }
+                onDeselect={() =>
+                  navigateTo({
+                    ...browseRegion,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421,
                   })
                 }
               >
