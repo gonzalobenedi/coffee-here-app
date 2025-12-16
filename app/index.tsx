@@ -1,13 +1,13 @@
 import i18n from "@/i18n";
 import { Colors } from "@/styles/tokens";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import {
-  Text,
-  SafeAreaView,
   Button,
-  StyleSheet,
   Pressable,
+  SafeAreaView,
+  StyleSheet,
+  Text,
 } from "react-native";
 
 export default function LoginPage() {
