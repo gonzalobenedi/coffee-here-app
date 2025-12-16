@@ -11,30 +11,30 @@
     "lint": "expo lint"
   },
   "dependencies": {
-    "expo": "~52.0.47",
-    "expo-constants": "~17.0.3",
-    "expo-linking": "~7.0.5",
-    "expo-router": "~4.0.21",
-    "expo-status-bar": "~2.0.1",
+    "expo": "^53.0.0",
+    "expo-constants": "~17.1.8",
+    "expo-linking": "~7.1.7",
+    "expo-location": "~18.1.6",
+    "expo-router": "~5.1.10",
+    "expo-status-bar": "~2.2.3",
     "i18next": "^24.1.0",
-    "react": "18.3.1",
+    "react": "19.0.0",
     "react-i18next": "^15.1.4",
-    "react-native": "0.76.9",
-    "react-native-safe-area-context": "4.12.0",
-    "react-native-screens": "~4.4.0",
-    "expo-location": "~18.0.10",
-    "react-native-maps": "1.18.0"
+    "react-native": "0.79.6",
+    "react-native-maps": "1.20.1",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "~4.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
-    "@types/react": "~18.3.12",
-    "eslint-config-expo": "~8.0.1",
+    "@types/react": "~19.0.10",
+    "eslint-config-expo": "~9.2.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.4.2",
-    "typescript": "^5.3.3"
+    "typescript": "~5.8.3"
   },
   "private": true
 }
