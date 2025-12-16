@@ -3,8 +3,8 @@
 > **Discover the best coffee shops near you with our location-based coffee finder app!**
 
 [![Built with Expo](https://img.shields.io/badge/Built%20with-Expo-000020.svg?style=flat&logo=EXPO&labelColor=FFF&logoColor=000)](https://expo.dev/)
-[![React Native](https://img.shields.io/badge/React%20Native-0.79.6-61DAFB.svg?style=flat&logo=react&labelColor=000)](https://reactnative.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6.svg?style=flat&logo=typescript&labelColor=FFF)](https://www.typescriptlang.org/)
+[![React Native](https://img.shields.io/badge/React%20Native-0.81.5-61DAFB.svg?style=flat&logo=react&labelColor=000)](https://reactnative.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-3178C6.svg?style=flat&logo=typescript&labelColor=FFF)](https://www.typescriptlang.org/)
 
 ## 🌟 Features
 
@@ -14,6 +14,8 @@
 - 🌐 **Multi-language Support** - Available in English, Spanish, and Danish
 - 📱 **Cross-platform** - Works on iOS, Android, and Web
 - 🎯 **Modern Navigation** - Tab-based navigation with Expo Router
+- 🔐 **Location Permissions** - Seamless location access with proper permission handling
+- 🆕 **New Architecture** - Built with Expo's new architecture for better performance
 
 ## 📸 Screenshots
 
@@ -25,7 +27,7 @@ _Coming soon..._
 
 Before you begin, ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v16 or higher)
+- [Node.js](https://nodejs.org/) (v18 or higher)
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 - [Expo CLI](https://docs.expo.dev/get-started/installation/)
 - For iOS development: [Xcode](https://developer.apple.com/xcode/)
@@ -64,6 +66,7 @@ Before you begin, ensure you have the following installed:
 | `npm run ios`     | Start on iOS device/simulator     | Requires iOS device or simulator (macOS only) |
 | `npm run web`     | Start web version                 | Opens in your default browser                 |
 | `npm run lint`    | Run ESLint to check code quality  | Checks for code style and potential issues    |
+| `npm run prepare` | Install and setup Husky git hooks | Runs automatically after npm install          |
 
 ## 🏗️ Project Structure
 
@@ -87,18 +90,21 @@ coffee-here-app/
 ├── 🎨 styles/                # Design tokens and styling
 ├── 📋 app.json               # Expo configuration
 ├── 📦 package.json           # Dependencies and scripts
-└── ⚙️ tsconfig.json          # TypeScript configuration
+├── ⚙️ tsconfig.json          # TypeScript configuration
+├── 🔧 commitlint.config.mjs  # Commit message linting
+└── 🧹 eslint.config.js       # ESLint configuration
 ```
 
 ## 🛠️ Tech Stack
 
-- **Framework:** [Expo](https://expo.dev/) with [React Native](https://reactnative.dev/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Navigation:** [Expo Router](https://docs.expo.dev/router/introduction/)
+- **Framework:** [Expo](https://expo.dev/) (SDK 54) with [React Native](https://reactnative.dev/) (0.81.5)
+- **Language:** [TypeScript](https://www.typescriptlang.org/) (5.9.2)
+- **Navigation:** [Expo Router](https://docs.expo.dev/router/introduction/) v6
 - **Maps:** [React Native Maps](https://github.com/react-native-maps/react-native-maps)
 - **Internationalization:** [i18next](https://www.i18next.com/) with [react-i18next](https://react.i18next.com/)
-- **Location Services:** [Expo Location](https://docs.expo.dev/versions/latest/sdk/location/)
+- **Location Services:** [Expo Location](https://docs.expo.dev/versions/latest/sdk/location/) with permission handling
 - **Code Quality:** ESLint + Prettier + Commitlint + Husky
+- **App Scheme:** `com.gbenedi.coffeehere` for deep linking
 
 ## 🌐 Internationalization
 
